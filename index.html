@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meu Blog de Animes</title>
+
+    <style>
+        * 
+
+.imagem-inicio {
+    text-align: center;
+    width: 100%;
+}
+
+.imagem-inicio img {
+    width: 600px;
+    max-width: 90%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+
+{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f555c5;
+            color: white;
+            line-height: 1.7;
+        }
+
+        /* CABEÇALHO */
+        header {
+            background: linear-gradient(135deg, #f836d8, #df04c1);
+            text-align: center;
+            padding: 50px 20px;
+            border-bottom: 4px solid #64045c;
+        }
+
+        header h1 {
+            font-size: 45px;
+            color: #290224;
+            margin-bottom: 15px;
+        }
+
+        header p {
+            font-size: 20px;
+            color: #77055e;
+        }
+
+        /* MENU */
+        nav {
+            background: #750359;
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 2px solid #8d277f;
+        }
+
+        nav button {
+            background: #eb14d9;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        nav button:hover {
+            background: #971986;
+            transform: scale(1.05);
+        }
+
+        /* CONTEÚDO */
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 300px 200px;
+        }
+
+        .inicio {
+            text-align: center;
+            padding: 50px 20px;
+            margin-bottom: 30px;
+            background: #75085e;
+            border-radius: 15px;
+            border: 1px solid #d80491;
+        }
+
+        .inicio h2 {
+            color: #a71c84;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .inicio p {
+            font-size: 18px;
+        }
+
+        /* SEÇÕES DOS ANIMES */
+        .anime {
+            display: none;
+            background: #ff56e8;
+            margin: 35px 0;
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid #ffffff;
+            box-shadow: 0 5px 20px rgba(229, 158, 238, 0.863);
+        }
+
+        .anime.ativo {
+            display: block;
+            animation: aparecer 0.5s;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .anime h2 {
+            color: #f284fc;
+            font-size: 34px;
+            margin-bottom: 1px;
+            text-align: center;
+        }
+
+        .anime h3 {
+            color: #ff87e5;
+            margin-top: 25px;
+            margin-bottom: 10px;
+        }
+
+        .anime p {
+            margin-bottom: 10px;
+            font-size: 17px;
+        }
+
+        /* ESPAÇO PARA IMAGEM */
+        .imagem {
+            height: 280px;
+            margin: 25px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #f137e2;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .imagem img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 10px;
+        }
+
+        /* BOTÃO VOLTAR */
+        .voltar {
+            display: block;
+            margin: 30px auto 0;
+            color: rgb(134, 6, 117);
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .voltar:hover {
+            background: #f755d4;
+        }
+
+        /* RODAPÉ */
+        footer {
+            text-align: center;
+            padding: 30px;
+            margin-top: 50px;
+            color: #fcb4fe;
+        }
+
+        /* RESPONSIVIDADE */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            nav button {
+                width: 90%;
+                margin: 5px auto;
+            }
+
+            .anime {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="imagem-inicio">
+    <img src="imagem principal.jpeg" alt="Imagem do blog"style="width: 1000px;">
+
+</div>
+
+
+    <!-- CABEÇALHO -->
+    <header id="topo">
+        <h1>🎌 Meu Blog de Animes 🎌</h1>
+        <p>Esse é meu blog sobre animes!</p>
+    </header>
+
+    <!-- MENU -->
+    <nav>
+        <button onclick="mostrar('inicio')">🏠 Início</button>
+        <button onclick="mostrar('jujutsu')">👹 Jujutsu Kaisen</button>
+        <button onclick="mostrar('naruto')">🍥 Naruto</button>
+        <button onclick="mostrar('apotecaria')">🌿 Diário de uma Apotecária</button>
+        <button onclick="mostrar('dragonball')">🐉 Dragon Ball</button>
+    </nav>
+
+    <main>
+
+        <!-- INÍCIO -->
+        <section id="inicio" class="inicio">
+            <h2>Bem-vindo ao meu blog!</h2>
+
+            <p>
+                Esse é meu blog sobre animes, criado para compartilhar informações,
+                curiosidades e opiniões sobre algumas das minhas obras favoritas.
+            </p>
+<img src="imagem.jpg" alt="Jujutsu Kaisen" style="width: 800px;">
+            <p>
+                Aqui você poderá conhecer um pouco mais sobre Jujutsu Kaisen,
+                Naruto, Diário de uma Apotecária e Dragon Ball.
+            </p>
+
+            <p>
+                Use os botões do menu para escolher o anime que você deseja conhecer.
+            </p>
+
+            <p>
+                Este site também possui espaços reservados para imagens.
+                Você pode colocar suas próprias imagens dos personagens e cenas
+                que quiser.
+            </p>
+
+            <div class=
+
+      <img src="imagem principal.jpeg" alt="a imagem principal do blog">;
+
+     </div>
+
+
+        </section>
+
+
+        <!-- JUJUTSU KAISEN -->
+        <section id="jujutsu" class="anime">
+
+            <h2>👹 Jujutsu Kaisen</h2>
+
+            <div class="imagem">
+            <img src="jujutu.jpeg" alt="todos os personagens" style="width: 1000px;">
+           </div>
+
+
+            <p>
+                Jujutsu Kaisen é um anime de ação, fantasia e sobrenatural.
+            </p>
+
+            <p>
+                A história acompanha Yuji Itadori, um estudante que possui uma força física impressionante.
+            </p>
+
+            <p>
+                A vida de Yuji muda quando ele entra em contato com um objeto amaldiçoado.
+            </p>
+
+            <p>
+                Esse objeto está relacionado a Ryomen Sukuna, uma das figuras mais perigosas da história.
+            </p>
+
+            <p>
+                Para proteger outras pessoas, Yuji acaba se envolvendo com o mundo dos feiticeiros jujutsu.
+            </p>
+
+            <p>
+                Ele passa a estudar na Escola Técnica de Jujutsu de Tóquio.
+            </p>
+
+            <p>
+                Lá ele conhece personagens importantes como Megumi Fushiguro e Nobara Kugisaki.
+            </p>
+
+            <p>
+                Satoru Gojo também possui um papel muito importante na história.
+            </p>
+
+            <p>
+                Gojo é conhecido por ser um dos feiticeiros mais poderosos.
+            </p>
+
+            <p>
+                O anime apresenta batalhas intensas e diferentes técnicas amaldiçoadas.
+            </p>
+
+            <p>
+                Os personagens precisam enfrentar maldições que surgem dos sentimentos negativos dos seres humanos.
+            </p>
+
+            <p>
+                Além das lutas, a história também trabalha temas como amizade, perda e escolhas difíceis.
+            </p>
+
+            <p>
+                A relação entre Yuji e seus amigos é uma das partes importantes da narrativa.
+            </p>
+
+            <p>
+                Jujutsu Kaisen também possui vários personagens com habilidades muito diferentes.
+            </p>
+
+            <p>
+                Cada batalha pode apresentar novas estratégias e técnicas.
+            </p>
+
+            <p>
+                O anime ficou conhecido mundialmente por suas cenas de ação e animação.
+            </p>
+
+            <p>
+                Para mim, Jujutsu Kaisen é uma ótima escolha para quem gosta de ação e histórias sobrenaturais.
+            </p>
+
+            <h3>⭐ Minha opinião</h3>
+
+            <p>
+                Eu gosto de Jujutsu Kaisen porque a história possui personagens interessantes,
+                lutas emocionantes e muitos mistérios e do toji ele e um lindo.
+            </p>
+
+            <button class="voltar" onclick="mostrar('inicio')">
+                ⬆ Voltar ao início
+            </button>
+
+        </section>
+
+
+        <!-- NARUTO -->
+        <section id="naruto" class="anime">
+
+            <h2>🍥 Naruto</h2>
+
+            <div class="imagem">
+             <img src="naruto.jpeg" alt="personagens de naruto"style="width: 1000px;">
+            </div>
+
+
+            <p>
+                Naruto é um dos animes mais conhecidos do mundo.
+            </p>
+
+            <p>
+                A história acompanha Naruto Uzumaki, um jovem ninja da Vila da Folha.
+            </p>
+
+            <p>
+                Desde criança, Naruto sonha em se tornar Hokage.
+            </p>
+
+            <p>
+                O Hokage é considerado o líder e um dos ninjas mais importantes da vila.
+            </p>
+
+            <p>0
+                Naruto cresce enfrentando dificuldades e muitas pessoas não o tratam bem.
+            </p>
+
+            <p>
+                Mesmo assim, ele continua acreditando em seus sonhos.
+            </p>
+
+            <p>
+                Durante sua jornada, Naruto faz amizades muito importantes.
+            </p>
+
+            <p>
+                Entre elas estão Sakura Haruno e Sasuke Uchiha.
+            </p>
+
+            <p>
+                Os três fazem parte do Time 7, liderado por Kakashi Hatake.
+            </p>
+
+            <p>
+                Sasuke se torna uma pessoa muito importante para o desenvolvimento da história.
+            </p>
+
+            <p>
+                Naruto precisa enfrentar vários inimigos e desafios durante sua jornada.
+            </p>
+
+            <p>
+                O anime apresenta diferentes vilas, clãs, técnicas ninjas e personagens.
+            </p>
+
+            <p>
+                Um dos elementos importantes da história são os jutsus.
+            </p>
+
+            <p>
+                Os jutsus são técnicas utilizadas pelos ninjas para lutar e realizar diferentes habilidades.
+            </p>
+
+            <p>
+                Naruto também possui uma criatura poderosa dentro de si chamada Kurama.
+            </p>
+
+            <p>
+                Ao longo da história, Naruto amadurece e aprende a lidar com seus poderes.
+            </p>
+
+            <p>
+                A amizade, a determinação e a superação são temas muito presentes no anime.
+            </p>
+
+            <p>
+                A jornada de Naruto mostra que uma pessoa pode superar grandes dificuldades.
+            </p>
+
+            <p>
+                Por isso, Naruto conquistou muitos fãs ao redor do mundo.
+            </p>
+
+            <h3>⭐ Minha opinião</h3>
+
+            <p>
+                Naruto é um anime que gosto principalmente pela evolução dos personagens
+                e pelas mensagens sobre amizade, esforço e nunca desistir dos seus sonhos.
+            </p>
+
+            <button class="voltar" onclick="mostrar('inicio')">
+                ⬆ Voltar ao início
+            </button>
+
+        </section>
+
+
+        <!-- DIÁRIO DE UMA APOTECÁRIA -->
+        <section id="apotecaria" class="anime">
+
+            <h2>🌿 Diário de uma Apotecária</h2>
+
+            <div class="imagem">
+    <img src="maomao.jpeg" alt="foto da personagem principal e o mestre Jinshi"style="width: 1000px;">
+           </div>
+ 
+
+            <p>
+                Diário de uma Apotecária é uma história que mistura mistério, drama e elementos históricos.
+            </p>
+
+            <p>
+                A protagonista da história é Maomao.
+            </p>
+
+            <p>
+                Maomao é uma jovem extremamente inteligente e possui conhecimentos sobre medicina e medicamentos.
+            </p>
+
+            <p>
+                Ela foi criada em um ambiente onde aprendeu bastante sobre ervas e venenos.
+            </p>
+
+            <p>
+                Em determinado momento, Maomao acaba trabalhando dentro do palácio imperial.
+            </p>
+
+            <p>
+                No palácio, ela começa a perceber que existem diversos acontecimentos misteriosos.
+            </p>
+
+            <p>
+                Por causa de seus conhecimentos, Maomao consegue solucionar problemas que outras pessoas não conseguem.
+            </p>
+
+            <p>
+                Ela observa detalhes pequenos e utiliza seu raciocínio para descobrir a verdade.
+            </p>
+
+            <p>
+                A personalidade de Maomao é uma das características mais interessantes da obra.
+            </p>
+
+            <p>
+                Ela é curiosa, inteligente e muitas vezes demonstra uma maneira diferente de pensar.
+            </p>
+
+            <p>
+                A história também apresenta Jinshi, um personagem que possui grande importância na trama.
+            </p>
+
+            <p>
+                
+            </p>
+
+            <p>
+                O anime apresenta diversos mistérios relacionados à vida dentro do palácio.
+            </p>
+
+            <p>
+                Maomao utiliza seus conhecimentos para investigar doenças, venenos e outros acontecimentos.
+            </p>
+
+            <p>
+                Diferentemente de muitos animes de ação, a protagonista resolve problemas principalmente usando inteligência.
+            </p>
+
+            <p>
+                A obra também apresenta detalhes sobre a sociedade e os costumes de sua época.
+            </p>
+
+            <p>
+                Os cenários do palácio ajudam a criar uma atmosfera diferente e bastante bonita.
+            </p>
+
+            <p>
+                Cada episódio pode apresentar um novo mistério para Maomao investigar.
+            </p>
+
+            <p>
+                O anime é uma boa opção para quem gosta de histórias de investigação.
+            </p>
+
+            <h3>⭐ Minha opinião</h3>
+
+            <p>
+             Eu gosto de Diário de uma apotecaria porque tem um pouco de romance junto com a raiva que ela tem do mestre
+            </p>
+
+            <button class="voltar" onclick="mostrar('inicio')">
+                ⬆ Voltar ao início
+            </button>
+
+        </section>
+
+
+        <!-- DRAGON BALL -->
+        <section id="dragonball" class="anime">
+
+            <h2>🐉 Dragon Ball</h2>
+
+            <div class="imagem">
+    <img src="dragon.jpeg" alt="todos os personagens"style="width: 1000px;">
+</div>
+
+
+            <p>
+                Dragon Ball é uma das franquias de anime mais famosas de todos os tempos.
+            </p>
+
+            <p>
+                A história acompanha Son Goku, um guerreiro que possui habilidades extraordinárias.
+            </p>
+
+            <p>
+                No início da história, Goku é apresentado como uma criança com uma força impressionante.
+            </p>
+
+            <p>
+                Ele conhece Bulma, que está procurando pelas Esferas do Dragão.
+            </p>
+
+            <p>
+                As Esferas do Dragão são objetos mágicos capazes de realizar desejos.
+            </p>
+
+            <p>
+                Durante sua jornada, Goku conhece muitos amigos e adversários.
+            </p>
+
+            <p>
+                Mestre Kame é um dos personagens que ajuda Goku a desenvolver suas habilidades.
+            </p>
+
+            <p>
+                Goku também conhece Kuririn, que se torna seu amigo e companheiro de treinamento.
+            </p>
+
+            <p>
+                A franquia apresenta vários torneios de artes marciais.
+            </p>
+
+            <p>
+                Conforme a história avança, os desafios ficam cada vez maiores.
+            </p>
+
+            <p>
+                Goku descobre mais sobre sua origem e sobre a raça Saiyajin.
+            </p>
+
+            <p>
+                Os Saiyajins são uma raça de guerreiros extremamente poderosos.
+            </p>
+
+            <p>
+                Vegeta é outro personagem muito importante e começa como um rival de Goku.
+            </p>
+
+            <p>
+                Com o passar do tempo, a relação entre Goku e Vegeta muda bastante.
+            </p>
+
+            <p>
+                Dragon Ball possui diversas transformações e técnicas famosas.
+            </p>
+
+            <p>
+                Uma das transformações mais conhecidas é o Super Saiyajin.
+            </p>
+
+            <p>
+                A série possui batalhas contra inimigos cada vez mais poderosos.
+            </p>
+
+            <p>
+                Mesmo com tantos desafios, Goku continua treinando para ficar mais forte.
+            </p>
+
+            <p>
+                A amizade e a vontade de proteger as pessoas são partes importantes da história.
+            </p>
+
+            <p>
+                Dragon Ball influenciou várias gerações de fãs de anime.
+            </p>
+
+            <h3>⭐ Minha opinião</h3>
+
+            <p>
+                Dragon Ball é um anime muito divertido para quem gosta de lutas,
+                personagens carismáticos, transformações e grandes aventuras.
+            </p>
+
+            <button class="voltar" onclick="mostrar('inicio')">
+                ⬆ Voltar ao início
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+        <p>🎌 Meu Blog de Animes 🎌</p>
+        <p>Feito por mim vitoria kwapicz 
+        instagram= @vitoria_kwapicz | Jujutsu Kaisen • Naruto • Diário de uma Apotecária • Dragon Ball</p>
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        function mostrar(anime) {
+
+            // Pega todas as seções de anime
+            const secoes = document.querySelectorAll(".anime");
+
+            // Esconde todas
+            secoes.forEach(function(secao) {
+                secao.classList.remove("ativo");
+            });
+
+            // Esconde a página inicial
+            const inicio = document.getElementById("inicio");
+
+            if (anime === "inicio") {
+
+                inicio.style.display = "block";
+
+            } else {
+
+                inicio.style.display = "none";
+
+                // Mostra o anime escolhido
+                const escolhido = document.getElementById(anime);
+
+                escolhido.classList.add("ativo");
+
+                // Volta para o topo
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }
+        }
+
+    </script>
+
+</body>
+</html>
